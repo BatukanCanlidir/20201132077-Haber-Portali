@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+
+      <button class="btn btn-outline-primary" [routerLink]="['/']">Kayıtları Listele</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <form #frm="ngForm" (ngSubmit)="Kaydet()">
+        <div class="card mt-3">
+          <div class="card-header">
+            <h4>HABER EKLE</h4>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label>Haber Başlığı</label>
+              <input type="text" name="baslik" class="form-control" [(ngModel)]="secKayit.baslik" required>
+            </div>
+            <div class="form-group">
+              <label>Haber Detayları</label>
+              <textarea name="icerik" rows="7" class="form-control" [(ngModel)]="secKayit.icerik" required></textarea>
+            </div>
+          </div>
+          <div class="card-footer">
+            <input type="submit" value="Kaydet" class="btn btn-success" [disabled]="frm.invalid">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
